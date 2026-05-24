@@ -39,11 +39,23 @@ public class Vector3 {
 
     public Vector3 add(Vector3 v) {
         Vector3 result = new Vector3(this.x, this.y, this.z);
-        result.setX(this.x+v.getX());
-        result.setY(this.y+v.getY());
-        result.setZ(this.z+v.getZ());
+        result.setX(this.x + v.getX());
+        result.setY(this.y + v.getY());
+        result.setZ(this.z + v.getZ());
 
         return result;
+    }
+
+    public Vector3 subtract(Vector3 v) {
+        return new Vector3(this.x - v.getX(), this.y - v.getY(), this.z - v.getZ());
+    }
+    
+    public Vector3 multiply(double scalar) {
+        return new Vector3(this.x * scalar, this.y * scalar, this.z * scalar);
+    }
+
+    public double dot(Vector3 v) {
+        return (this.x * v.getX() + this.y * v.getY() + this.z * v.getZ());
     }
 
 
